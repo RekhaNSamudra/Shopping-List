@@ -1,0 +1,88 @@
+.addItemContainer {
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: 500px;
+  margin: auto;
+}
+
+.row {
+  margin-bottom: 15px;
+}
+
+/* styles of Home.jsx */
+
+.tableContainer {
+  margin: 20px auto;
+  width: 60%;
+  text-align: center;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh; /* Full viewport height */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center !important;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.icon {
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.iconGreen {
+  color: green;
+}
+
+.iconPurple {
+  color: purple;
+}
+
+.iconRed {
+  color: red;
+}
+
+.noLinkDecoration {
+  text-decoration: none;
+  color: inherit;
+}
+
+.noButtonStyle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: green;
+}
+
+.modalBackground {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.hiddenContent {
+  display: none;
+}
