@@ -34,38 +34,53 @@ const Update = () => {
       <h2 className="text-center my-2">Edit the data</h2>
       <form className="w-50 mx-auto my-5" onSubmit={handleUpdate}>
         <div className="mb-3">
-          <label className="form-label">Item Name</label>
-          <input
-            type="text"
-            name="item"
-            className="form-control"
-            value={updateData.item || ""}
-            onChange={newData}
-          />
+          <div className="row">
+            <div className="col-sm-4 col-md-6 col-lg-8 mx-auto">
+              <label className="form-label">Item Name</label>
+
+              <input
+                type="text"
+                name="item"
+                className="form-control"
+                value={updateData.item || ""}
+                onChange={newData}
+              />
+            </div>
+          </div>
         </div>
         <div className="mb-3">
-          <label className="form-label">Quantity</label>
-          <input
-            type="text"
-            name="quantity"
-            className="form-control"
-            value={updateData.quantity || ""}
-            onChange={newData}
-          />
+          <div className="row">
+            <div className="col-sm-4 col-md-6 col-lg-8 mx-auto">
+              <label className="form-label">Quantity</label>
+              <input
+                type="text"
+                name="quantity"
+                className="form-control"
+                value={updateData.quantity || ""}
+                onChange={newData}
+              />
+            </div>
+          </div>
         </div>
         <div className="mb-3">
-          <label className="form-label">Units</label>
-          <input
-            type="text"
-            name="unit"
-            className="form-control"
-            value={updateData.unit || ""}
-            onChange={newData}
-          />
+          <div className="row">
+            <div className="col-sm-4 col-md-6 col-lg-8 mx-auto">
+              <label className="form-label">Units</label>
+              <input
+                type="text"
+                name="unit"
+                className="form-control"
+                value={updateData.unit || ""}
+                onChange={newData}
+              />
+            </div>
+          </div>
         </div>
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
+        <div className="d-flex justify-content-center">
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -43,68 +43,79 @@ const List = () => {
           <div style={{ marginLeft: "25%" }}>
             <Link to="/">Add Item</Link>
           </div>
-          <div className={styles.tableContainer}>
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Number</th>
-                  <th>Item Name</th>
-                  <th>Quantity</th>
-                  <th>Bought</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {items.map((item, index) => (
-                  <tr key={index}>
-                    <td>{index + 1}</td>
-                    <td
-                      style={{
-                        textDecoration: item.bought ? "line-through" : "none",
-                      }}
-                    >
-                      {item.item}
-                    </td>
-                    <td>{item.quantity}</td>
-                    <td>
-                      <input
-                        type="checkbox"
-                        checked={item.bought}
-                        onChange={() => handleCheck(index)}
-                      />
-                    </td>
-                    <td>
-                      <div className="d-flex justify-content-between">
-                        <button
-                          className={styles.noButtonStyle}
-                          onClick={() => [setId(item.id), setShowPopup(true)]}
-                        >
-                          <i
-                            className={`bi bi-eye-fill ${styles.icon} ${styles.iconGreen}`}
-                          ></i>
-                        </button>
-                        <Link
-                          to={`/edit/${item.id}`}
-                          className={styles.noLinkDecoration}
-                        >
-                          <i
-                            className={`bi bi-pencil-square ${styles.icon} ${styles.iconPurple}`}
-                          ></i>
-                        </Link>
-                        <button
-                          className={styles.noButtonStyle}
-                          onClick={() => handleDelete(item.id)}
-                        >
-                          <i
-                            className={`bi bi-trash3 ${styles.icon} ${styles.iconRed}`}
-                          ></i>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="row">
+            <div className="col-lg-12 col-md-6 col-sm-3">
+              <div className={styles.tableContainer}>
+                <div className="table-responsive">
+                  <table className="table">
+                    <thead>
+                      <tr>
+                        <th>Number</th>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Bought</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {items.map((item, index) => (
+                        <tr key={index}>
+                          <td>{index + 1}</td>
+                          <td
+                            style={{
+                              textDecoration: item.bought
+                                ? "line-through"
+                                : "none",
+                            }}
+                          >
+                            {item.item}
+                          </td>
+                          <td>{item.quantity}</td>
+                          <td>
+                            <input
+                              type="checkbox"
+                              checked={item.bought}
+                              onChange={() => handleCheck(index)}
+                            />
+                          </td>
+                          <td>
+                            <div className="d-flex justify-content-between">
+                              <button
+                                className={styles.noButtonStyle}
+                                onClick={() => [
+                                  setId(item.id),
+                                  setShowPopup(true),
+                                ]}
+                              >
+                                <i
+                                  className={`bi bi-eye-fill ${styles.icon} ${styles.iconGreen}`}
+                                ></i>
+                              </button>
+                              <Link
+                                to={`/edit/${item.id}`}
+                                className={styles.noLinkDecoration}
+                              >
+                                <i
+                                  className={`bi bi-pencil-square ${styles.icon} ${styles.iconPurple}`}
+                                ></i>
+                              </Link>
+                              <button
+                                className={styles.noButtonStyle}
+                                onClick={() => handleDelete(item.id)}
+                              >
+                                <i
+                                  className={`bi bi-trash3 ${styles.icon} ${styles.iconRed}`}
+                                ></i>
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -43,71 +43,75 @@ const AddItem = () => {
   };
 
   return (
-    <div className={styles.addItemContainer}>
-      <div className="d-flex justify-content-between">
-        <h3>Add Item</h3>
-        <Link to="/list">
-          <button className={styles.noButtonStyle}>
-            {" "}
-            Shopping List(
-            <span style={{ color: "red" }}>{allItems.length}</span>)
-          </button>
-        </Link>
+    <>
+      <div className="d-flex justify-content-center">
+        <div className={styles.addItemContainer}>
+          <div className="d-flex justify-content-between">
+            <h3>Add Item</h3>
+            <Link to="/list">
+              <button className={styles.noButtonStyle}>
+                {" "}
+                Shopping List(
+                <span style={{ color: "red" }}>{allItems.length}</span>)
+              </button>
+            </Link>
+          </div>
+          <form onSubmit={handleSubmit}>
+            <div className="row mb-3">
+              <div className="col">
+                <label>Item</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="item"
+                  value={formData.item}
+                  onChange={handleInputChange}
+                />
+              </div>
+            </div>
+
+            <div className="row mb-3">
+              <div className="col">
+                <label>Quantity</label>
+                <input
+                  type="number"
+                  className="form-control"
+                  name="quantity"
+                  value={formData.quantity}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="col">
+                <label>Unit</label>
+                <select
+                  className="form-select"
+                  name="unit"
+                  value={formData.unit}
+                  onChange={handleInputChange}
+                >
+                  <option value="kg">kg</option>
+                  <option value="litre">litre</option>
+                  <option value="units">units</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="d-flex justify-content-between">
+              <button type="submit" className="btn btn-primary">
+                Submit
+              </button>
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={handleClear}
+              >
+                Clear
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-      <form onSubmit={handleSubmit}>
-        <div className="row mb-3">
-          <div className="col">
-            <label>Item</label>
-            <input
-              type="text"
-              className="form-control"
-              name="item"
-              value={formData.item}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-
-        <div className="row mb-3">
-          <div className="col">
-            <label>Quantity</label>
-            <input
-              type="number"
-              className="form-control"
-              name="quantity"
-              value={formData.quantity}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="col">
-            <label>Unit</label>
-            <select
-              className="form-select"
-              name="unit"
-              value={formData.unit}
-              onChange={handleInputChange}
-            >
-              <option value="kg">kg</option>
-              <option value="litre">litre</option>
-              <option value="units">units</option>
-            </select>
-          </div>
-        </div>
-
-        <div className="d-flex justify-content-between">
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-          <button
-            type="button"
-            className="btn btn-secondary"
-            onClick={handleClear}
-          >
-            Clear
-          </button>
-        </div>
-      </form>
-    </div>
+    </>
   );
 };
 
